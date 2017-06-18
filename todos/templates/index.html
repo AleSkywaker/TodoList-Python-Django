@@ -1,8 +1,4 @@
-{% include 'partials/header.html' %}
-
-
-    <div class="container">
-    <h1 class="text-center padtop">{{titulo}}</h1>
+     {% include 'partials/header.html' %}  
     <hr>
         <ul>
             {% for t in tareas %}
@@ -10,6 +6,5 @@
             <p>{{t.text}}</p>
             {% endfor %}
         </ul>
-    </div>
-   
-   {% include 'partials/footer.html' %}
+    </div> 
+     {% include 'partials/footer.html' %}

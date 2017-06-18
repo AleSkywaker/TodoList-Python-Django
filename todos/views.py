@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-from django.shortcuts import render
+from django.shortcuts import render, redirect 
 from django.http import HttpResponse
 
 
@@ -17,7 +17,7 @@ def index(request):
 
     context = {
         'titulo':'LISTA DE TAREAS',
-       'tareas': todos
+        'tareas': todos
     }
     return render(request, 'index.html', context)
 
@@ -29,3 +29,15 @@ def details(request, id):
        'tarea': todo
     }
     return render(request, 'details.html', context)
+
+def add(request):
+    if(request.method == 'POST'):
+        title = request.POST['title']
+        text = request.POST['text']
+
+        todo = Todo(title=title, text=text)
+        todo.save()
+
+        return redirect('/todos')
+    else:
+        return render(request, 'add.html')
