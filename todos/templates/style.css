@@ -1,0 +1,16 @@
+#padtop{
+    margin-top: 50%;
+    padding-top: 50%;
+    color:red !important
+}
+.padtop{
+    margin-top: 50%;
+    padding-top: 50%;
+    color:red !important
+}
+div{
+    background: yellow;
+}
+body{
+    background: yellow;
+}
